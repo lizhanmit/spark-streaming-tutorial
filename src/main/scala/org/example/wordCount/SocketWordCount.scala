@@ -3,7 +3,10 @@ package org.example.wordCount
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions.{col, explode, split}
 
-object StreamingWordCount extends Serializable {
+/**
+ * Word count with socket connection as data source.
+ */
+object SocketWordCount extends Serializable {
 
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
