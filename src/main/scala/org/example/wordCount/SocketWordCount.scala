@@ -13,7 +13,7 @@ object SocketWordCount extends Serializable {
       .master("local[3]")
       .config("spark.sql.shuffle.partitions", 3)
       .config("spark.streaming.stopGracefullyOnShutdown", true)
-      .appName("Streaming Word Count")
+      .appName("Socket Word Count")
       .getOrCreate()
 
     spark.sparkContext.setLogLevel("ERROR")
