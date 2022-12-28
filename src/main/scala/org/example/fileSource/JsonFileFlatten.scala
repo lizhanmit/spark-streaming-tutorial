@@ -22,7 +22,7 @@ object JsonFileFlatten extends Serializable {
 
     val rawDF = spark.readStream
       .format("json")
-      .option("path", "input")
+      .option("path", "target/input")
       .option("maxFilesPerTrigger", 1)
       .load()
 
@@ -39,7 +39,7 @@ object JsonFileFlatten extends Serializable {
 
     val query = flattenedDF.writeStream
       .format("json")
-      .option("path", "output")
+      .option("path", "target/output")
       .option("checkpointLocation", "checkpointDir")
       .outputMode("append")
       .trigger(Trigger.ProcessingTime("1 minute"))

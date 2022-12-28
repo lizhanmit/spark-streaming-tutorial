@@ -50,10 +50,10 @@ Steps:
 ### Flatten Json Files
 
 1. In Intellij IDEA, execute class `JsonFileFlatten.scala`. 
-2. Copy one sample json file from folder "sampleData" and paste under folder "input" (create it if there is no such folder).
-3. After around 1 min, processed output json file can be seen under folder "output".
+2. Copy one sample json file from folder "sampleData" and paste under folder "target/input" (create it if there is no such folder).
+3. After around 1 min, processed output json file can be seen under folder "target/output".
 4. Repeat step 2 for another json file. 
-5. After around 1 min, another processed output json file can be seen under folder "output".
+5. After around 1 min, another processed output json file can be seen under folder "target/output".
 6. Every time before executing this application, it is needed to delete checkpoint folder.
 
 ---
