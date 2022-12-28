@@ -4,6 +4,15 @@
 
 ![spark-stream-processing-model.png](img/spark-stream-processing-model.png)
 
+### Data Sources 
+
+Built-in data sources:
+
+- Socket source: not for production, only for learning purpose.
+- Rate source: for testing and benchmarking Spark cluster. A dummy data source which generates a configurable number of key/value pairs per second.
+- File source
+- Kafka source
+
 ---
 
 ## Development Environment
@@ -17,7 +26,7 @@
 
 ---
 
-## Word Count
+## Word Count with Socket Connection
 
 Use netcat to listen to a port, and wait for input from command line. After inputting some words in command line, they will be counted in real time, and the result will be printed out in console in Intellij IDEA.
 
@@ -25,7 +34,7 @@ Steps:
 
 1. Download nmap from https://nmap.org/download#windows, and install. 
 2. Open terminal, and type `ncat -lk 9999`. (9999 is a random port number here.)
-3. Intellij IDEA, execute class `StreamingWordCount.scala`.
+3. Intellij IDEA, execute class `SocketWordCount.scala`.
 4. In terminal, type random words. 
 5. Result should be seen in console of Intellij IDEA.
 
