@@ -2,7 +2,13 @@
 
 ## Theory
 
+### Spark Stream Processing Model
+
 ![spark-stream-processing-model.png](img/spark-stream-processing-model.png)
+
+### Fault Tolerance
+
+![spark-streaming-fault-tolerance.png](img/spark-streaming-fault-tolerance.png)
 
 ### Data Sources 
 
