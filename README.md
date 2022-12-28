@@ -13,6 +13,12 @@ Built-in data sources:
 - File source
 - Kafka source
 
+### Output Modes
+
+- Append: insert only (not supported for aggregation operations, exception)
+- Update: upsert
+- Complete: overwrite
+
 ---
 
 ## Development Environment
@@ -26,7 +32,9 @@ Built-in data sources:
 
 ---
 
-## Word Count with Socket Connection
+## Coding
+
+### Word Count with Socket Connection
 
 Use netcat to listen to a port, and wait for input from command line. After inputting some words in command line, they will be counted in real time, and the result will be printed out in console in Intellij IDEA.
 
@@ -34,9 +42,19 @@ Steps:
 
 1. Download nmap from https://nmap.org/download#windows, and install. 
 2. Open terminal, and type `ncat -lk 9999`. (9999 is a random port number here.)
-3. Intellij IDEA, execute class `SocketWordCount.scala`.
+3. In Intellij IDEA, execute class `SocketWordCount.scala`.
 4. In terminal, type random words. 
 5. Result should be seen in console of Intellij IDEA.
+6. Every time before executing this application, it is needed to delete checkpoint folder.
+
+### Flatten Json Files
+
+1. In Intellij IDEA, execute class `JsonFileFlatten.scala`. 
+2. Copy one sample json file from folder "sampleData" and paste under folder "input" (create it if there is no such folder).
+3. After around 1 min, processed output json file can be seen under folder "output".
+4. Repeat step 2 for another json file. 
+5. After around 1 min, another processed output json file can be seen under folder "output".
+6. Every time before executing this application, it is needed to delete checkpoint folder.
 
 ---
 
