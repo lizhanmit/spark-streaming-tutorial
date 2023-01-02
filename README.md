@@ -34,7 +34,27 @@ Built-in data sources:
 - Scala: 2.12.17
 - Spark: 3.3.1
 - Hadoop: 3.3.1
+- Kafka: 2.12-3.3.1
 - IDE: Intellij IDEA Community
+
+Set up all kinds of HOME environment variables, and configure system variable `Path`.
+
+### Configure Kafka
+
+- In file "kafka_2.12-3.3.1\config\zookeeper.properties", update the value of `dataDir` to `../kafka-logs/zookeeper`.
+- In file "kafka_2.12-3.3.1\config\server.properties", uncomment `listeners=PLAINTEXT://:9092`, and update the value of `log.dirs` to `../kafka-logs/server-0`.
+
+### Start Kafka
+
+Steps: 
+
+1. Go to directory `kafka_2.12-3.3.1`, and open terminal.  
+2. Start Zookeeper service: `zookeeper-server-start.bat %KAFKA_HOME%/config/zookeeper.properties`. 
+3. Open a new terminal, start Kafka broker service: `kafka-server-start.bat %KAFKA_HOME%/config/server.properties`. 
+4. Open a new terminal, create a topic: `kafka-topics.bat --create --topic quickstart-events --bootstrap-server localhost:9092`.
+5. In the same terminal (not necessary), create a consumer: `kafka-console-consumer.bat --topic quickstart-events --from-beginning --bootstrap-server localhost:9092`.
+6. Open a new terminal, create a producer: `kafka-console-producer.bat --topic quickstart-events --bootstrap-server localhost:9092`.
+7. In producer terminal, type some words, then you should be able to see those words in consumer terminal right away.
 
 ---
 
