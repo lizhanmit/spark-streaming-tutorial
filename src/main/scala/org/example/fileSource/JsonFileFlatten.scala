@@ -13,9 +13,9 @@ object JsonFileFlatten extends Serializable {
     val spark = SparkSession.builder()
       .master("local[3]")
       .config("spark.sql.shuffle.partitions", 3)
-      .config("spark.streaming.stopGracefullyOnShutdown", true)
-      .config("spark.sql.streaming.schemaInference", true)  // enable schema inference for reading json files
-      .appName("File Source")
+      .config("spark.streaming.stopGracefullyOnShutdown", "true")
+      .config("spark.sql.streaming.schemaInference", "true")  // enable schema inference for reading json files
+      .appName("Json File Flatten")
       .getOrCreate()
 
     spark.sparkContext.setLogLevel("ERROR")

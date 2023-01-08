@@ -12,7 +12,7 @@ object SocketWordCount extends Serializable {
     val spark = SparkSession.builder()
       .master("local[3]")
       .config("spark.sql.shuffle.partitions", 3)
-      .config("spark.streaming.stopGracefullyOnShutdown", true)
+      .config("spark.streaming.stopGracefullyOnShutdown", "true")
       .appName("Socket Word Count")
       .getOrCreate()
 
