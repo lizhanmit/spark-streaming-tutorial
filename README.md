@@ -1,5 +1,21 @@
 # spark-streaming-tutorial
 
+- [spark-streaming-tutorial](#spark-streaming-tutorial)
+  - [Theory](#theory)
+    - [Spark Stream Processing Model](#spark-stream-processing-model)
+    - [Fault Tolerance](#fault-tolerance)
+    - [Data Sources](#data-sources)
+    - [Output Modes](#output-modes)
+  - [Development Environment](#development-environment)
+    - [Configure Kafka](#configure-kafka)
+    - [Start Kafka](#start-kafka)
+  - [Coding](#coding)
+    - [Word Count with Socket Connection](#word-count-with-socket-connection)
+    - [Flatten Json Files](#flatten-json-files)
+  - [Troubleshooting](#troubleshooting)
+
+---
+
 ## Theory
 
 ### Spark Stream Processing Model
